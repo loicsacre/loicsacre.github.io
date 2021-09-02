@@ -4,18 +4,37 @@ const TEMP = 'flutter-temp-cache';
 const CACHE_NAME = 'flutter-app-cache';
 const RESOURCES = {
   "version.json": "84d45fc1b6fb92371e3ad9f2a215de6d",
-"index.html": "2621ec327eeec4b8b232af990ccf4bf0",
-"/": "2621ec327eeec4b8b232af990ccf4bf0",
-"main.dart.js": "78c5edd3486859aee67f3b066a1b8e8a",
+"index.html": "fadf8d27913a44a73f933f71fca1a8ee",
+"/": "fadf8d27913a44a73f933f71fca1a8ee",
+"main.dart.js": "8b0378287bc2cecd020d3a52a557b8d4",
 "favicon.png": "5dcef449791fa27946b3d35ad8803796",
 "icons/Icon-192.png": "ac9a721a12bbc803b44f645561ecb1e1",
 "icons/Icon-512.png": "96e752610906ba2a93c65f8abe1645f1",
 "manifest.json": "4dc4bb1ba8aac92b42885063bbb82500",
-"assets/AssetManifest.json": "2efbb41d7877d10aac9d091f58ccd7b9",
-"assets/NOTICES": "e0607c5f74676ab2a1efce8d8acb50c5",
-"assets/FontManifest.json": "dc3d03800ccca4601324923c0b1d6d57",
+"assets/AssetManifest.json": "a26b773af7831e99f5e6f77466f5250f",
+"assets/NOTICES": "91370610dbae5b58841997361693e583",
+"assets/FontManifest.json": "40bcefb296f7a7c76fe47665036fd610",
+"assets/packages/tip_dialog/images/2.0x/icon_notify_info.png": "dc674b1f6e86dd75aa2eee5bb6acee13",
+"assets/packages/tip_dialog/images/2.0x/icon_notify_done.png": "21b990ec5c0976fe695d06ae1e161d08",
+"assets/packages/tip_dialog/images/2.0x/icon_notify_error.png": "0b90b0b3907eca3b9a54fcf864a9fcdd",
+"assets/packages/tip_dialog/images/3.0x/icon_notify_info.png": "4bf33f2a7ffebc0d38f2b3e403fa693b",
+"assets/packages/tip_dialog/images/3.0x/icon_notify_done.png": "d160f913863bc37c4983c5d00fdf5df4",
+"assets/packages/tip_dialog/images/3.0x/icon_notify_error.png": "e1e8be014c914b05d34a401154cb401d",
 "assets/packages/cupertino_icons/assets/CupertinoIcons.ttf": "b14fcf3ee94e3ace300b192e9e7c8c5d",
-"assets/fonts/MaterialIcons-Regular.otf": "1288c9e28052e028aba623321f7826ac"
+"assets/fonts/Poppins-Regular.ttf": "41e8dead03fb979ecc23b8dfb0fef627",
+"assets/fonts/MaterialIcons-Regular.otf": "4e6447691c9509f7acdbf8a931a85ca1",
+"assets/fonts/Poppins-Bold.ttf": "c23534acbeddbaadfd0ab2d2bbfdfc84",
+"assets/fonts/CustomIcons.ttf": "72a43d2ab2b88a1246fde470419bbd5f",
+"assets/fonts/Poppins-SemiBold.ttf": "342ba3d8ac29ac8c38d7cef8efbf2dc9",
+"assets/assets/images/conseil-road-trip-810x541.jpg": "d19833d93b7552358833a9361d931b54",
+"assets/assets/images/buildings.png": "d60ae11b7f30c1c02d85c847b1b83ccb",
+"assets/assets/images/languages/fr-flag-square-xs.png": "e198ebdb6d49f77c82bf69a06b20247d",
+"assets/assets/images/languages/it-flag-square-xs.png": "0c1dbfd43147efd3100cea773f2f25ab",
+"assets/assets/images/languages/de-flag-square-xs.png": "4e539cab2bee4573a6b5cfa920742127",
+"assets/assets/images/languages/en-flag-square-xs.png": "1dad60629a33df0dae55cdedfe90e649",
+"assets/assets/icons/empty_or_error.png": "bd335d6bef76fbca1969531cc127b825",
+"assets/assets/icons/city_old.png": "cfaa585ecc2d9a62211dc9d630da0161",
+"assets/assets/icons/city.png": "f528805be5c1ae2ef60513b444099962"
 };
 
 // The application shell files that are downloaded before a service worker can
@@ -33,7 +52,7 @@ self.addEventListener("install", (event) => {
   return event.waitUntil(
     caches.open(TEMP).then((cache) => {
       return cache.addAll(
-        CORE.map((value) => new Request(value + '?revision=' + RESOURCES[value], {'cache': 'reload'})));
+        CORE.map((value) => new Request(value, {'cache': 'reload'})));
     })
   );
 });
@@ -159,7 +178,7 @@ async function downloadOffline() {
     }
     currentContent[key] = true;
   }
-  for (var resourceKey in Object.keys(RESOURCES)) {
+  for (var resourceKey of Object.keys(RESOURCES)) {
     if (!currentContent[resourceKey]) {
       resources.push(resourceKey);
     }
