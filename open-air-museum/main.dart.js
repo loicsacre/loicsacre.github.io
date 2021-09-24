@@ -88137,7 +88137,7 @@ F.R7.prototype={
 a8L:function(){D.cw().$1("Construct OpenAirMuseumApp")
 var s=$.aIy()
 s.a=C.ke
-s.b=!0
+s.b=!1
 W.bL(window,"unload",new F.ahd(),!1,t.E2)},
 C:function(a,b){var s,r,q,p,o,n,m=null,l=4291062605
 D.cw().$1("Build OpenAirMuseumApp")
@@ -91839,7 +91839,7 @@ grL:function(){switch(this.a){case C.kd:return"debug"
 case C.ke:return"beta"
 case C.Hv:return"release"}return"debug"},
 got:function(){var s=this.a
-return(s===C.kd||s===C.ke)&&!0}}
+return(s===C.kd||s===C.ke)&&this.b}}
 X.pR.prototype={}
 Q.rf.prototype={
 wt:function(a,b){var s=null
