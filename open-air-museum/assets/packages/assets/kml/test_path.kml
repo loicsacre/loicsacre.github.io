@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+    <name>Test map</name>
+    <description/>
+    <Style id="icon-1899-DB4436-nodesc-normal">
+      <IconStyle>
+        <color>ff3644db</color>
+        <scale>1</scale>
+        <Icon>
+          <href>https://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
+        </Icon>
+        <hotSpot x="32" xunits="pixels" y="64" yunits="insetPixels"/>
+      </IconStyle>
+      <LabelStyle>
+        <scale>0</scale>
+      </LabelStyle>
+      <BalloonStyle>
+        <text><![CDATA[<h3>$[name]</h3>]]></text>
+      </BalloonStyle>
+    </Style>
+    <Style id="icon-1899-DB4436-nodesc-highlight">
+      <IconStyle>
+        <color>ff3644db</color>
+        <scale>1</scale>
+        <Icon>
+          <href>https://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
+        </Icon>
+        <hotSpot x="32" xunits="pixels" y="64" yunits="insetPixels"/>
+      </IconStyle>
+      <LabelStyle>
+        <scale>1</scale>
+      </LabelStyle>
+      <BalloonStyle>
+        <text><![CDATA[<h3>$[name]</h3>]]></text>
+      </BalloonStyle>
+    </Style>
+    <StyleMap id="icon-1899-DB4436-nodesc">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#icon-1899-DB4436-nodesc-normal</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#icon-1899-DB4436-nodesc-highlight</styleUrl>
+      </Pair>
+    </StyleMap>
+    <Style id="line-1267FF-5000-nodesc-normal">
+      <LineStyle>
+        <color>ffff6712</color>
+        <width>5</width>
+      </LineStyle>
+      <BalloonStyle>
+        <text><![CDATA[<h3>$[name]</h3>]]></text>
+      </BalloonStyle>
+    </Style>
+    <Style id="line-1267FF-5000-nodesc-highlight">
+      <LineStyle>
+        <color>ffff6712</color>
+        <width>7.5</width>
+      </LineStyle>
+      <BalloonStyle>
+        <text><![CDATA[<h3>$[name]</h3>]]></text>
+      </BalloonStyle>
+    </Style>
+    <StyleMap id="line-1267FF-5000-nodesc">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#line-1267FF-5000-nodesc-normal</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#line-1267FF-5000-nodesc-highlight</styleUrl>
+      </Pair>
+    </StyleMap>
+    <Folder>
+      <name>path</name>
+    </Folder>
+    <Folder>
+      <name>Directions from Place Saint Lambert, Liège to chiroux</name>
+      <Placemark>
+        <name>Directions from Place Saint Lambert, Liège to chiroux</name>
+        <styleUrl>#line-1267FF-5000-nodesc</styleUrl>
+        <LineString>
+          <tessellate>1</tessellate>
+          <coordinates>
+            5.57305,50.64462,0
+            5.57294,50.6446,0
+            5.57298,50.64456,0
+            5.5731,50.6444,0
+            5.57315,50.64428,0
+            5.57321,50.64419,0
+            5.57326,50.64413,0
+            5.57346,50.64394,0
+            5.57352,50.64389,0
+            5.57366,50.64377,0
+            5.57368,50.64372,0
+            5.57366,50.6437,0
+            5.57356,50.64365,0
+            5.57293,50.64334,0
+            5.57287,50.64332,0
+            5.57276,50.64332,0
+            5.57265,50.64332,0
+            5.57266,50.64329,0
+            5.57263,50.64326,0
+            5.57255,50.64321,0
+            5.57243,50.64314,0
+            5.57251,50.64308,0
+            5.57253,50.64304,0
+            5.57254,50.643,0
+            5.573,50.64262,0
+            5.57358,50.64206,0
+            5.57382,50.64181,0
+            5.574,50.64165,0
+            5.57415,50.64151,0
+            5.57462,50.64109,0
+            5.57486,50.64092,0
+            5.57506,50.64075,0
+            5.5754,50.6404,0
+            5.57544,50.64036,0
+            5.57553,50.64028,0
+            5.57575,50.63992,0
+            5.576,50.6396,0
+            5.5761,50.63949,0
+            5.5762,50.63935,0
+            5.57521,50.63909,0
+          </coordinates>
+        </LineString>
+      </Placemark>
+      <Placemark>
+        <name>Place Saint Lambert, Liège</name>
+        <styleUrl>#icon-1899-DB4436-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            5.57305,50.64462,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Place du Vingt Août, Liège</name>
+        <styleUrl>#icon-1899-DB4436-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            5.57553,50.64028,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>chiroux</name>
+        <styleUrl>#icon-1899-DB4436-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            5.575213,50.6390903,0
+          </coordinates>
+        </Point>
+      </Placemark>
+    </Folder>
+  </Document>
+</kml>
