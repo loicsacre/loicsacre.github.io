@@ -48855,7 +48855,7 @@ gtL(){switch(this.a){case C.hN:return"debug"
 case C.kT:return"beta"
 case C.Pu:return"release"}},
 gpj(){var s=this.a
-return(s===C.hN||s===C.kT)&&!0}}
+return(s===C.hN||s===C.kT)&&this.c}}
 L.FS.prototype={
 gpD(){var s=this.db
 return s==null?H.c(H.f("prefs")):s},
@@ -90279,7 +90279,7 @@ aba(){D.c6().$1("Construct OpenAirMuseumApp")
 var s=$.dZ()
 s.b=C.no
 s.a=C.kT
-s.c=!0
+s.c=!1
 W.br(window,"unload",new F.aim(),!1,t.I3)},
 C(a,b){var s,r,q,p,o,n,m=null,l=4291062605
 D.c6().$1("Build OpenAirMuseumApp")
