@@ -51234,40 +51234,41 @@ A.zZ.prototype={
 P(a){A.a7S(!1)
 return new A.qD(B.Cs,"Flutter Demo",A.a5V(B.j,null,B.eN,B.j,null),!1,null)}}
 A.A_.prototype={
-P(a){var s={}
-s.a=null
-return new A.rL(new A.qn(new A.S6(s,!0,A.a7S(!1)),null),null)}}
+P(a){var s,r,q,p,o,n,m=null,l={}
+l.a=null
+s=A.a7S(!1)
+r=A.a([],t.BF)
+q=$.hH()
+p=$.aco()
+o=A.a([],t.b)
+n=new A.tx(r,A.w(t.z,t.w4),A.w(t.ug,t.S),q,p,m,m,$,!1,new A.q4(),new A.q4(),!1,m,m,$,B.dY,o,0,new A.bU([]),new A.bU([]))
+n.IZ(m,m)
+l.a=n
+return new A.rL(new A.qn(new A.S6(l,s,!0),m),m)}}
 A.S6.prototype={
-$2(a,b){var s,r,q,p,o,n,m,l,k,j,i,h=null,g=b.d,f=b.b
-A.oA().$1("Screen size ["+A.h(f)+", "+A.h(g)+"]")
-s=A.a([],t.BF)
-r=$.hH()
-q=$.aco()
-p=A.a([],t.b)
-o=new A.tx(s,A.w(t.z,t.w4),A.w(t.ug,t.S),r,q,h,h,$,!1,new A.q4(),new A.q4(),!1,h,h,$,B.dY,p,0,new A.bU([]),new A.bU([]))
-o.IZ(h,h)
-this.a.a=o
-n=this.c.a=f<1200
-m=g*(n?0.8:0.9)
-l=(g-m)*0.8
-if(n)l/=2
-s=this.a
-k=new A.BL(new A.ab(l,l),new A.S4(s),new A.S5(s),h)
-r=l*0.2/2
-q=t.E
-p=A.a([],q)
-if(!n)B.b.F(p,A.a([k,B.E5],q))
-j=new A.C(new Float64Array(2))
-j.d3(l)
-i=s.a.gU6()
-p.push(new A.tD(i,j,20,7,h))
-p=A.BQ(p,B.pO,B.be)
-s=s.a
-j=new A.mu(s,h,t.tW)
-j.MZ(s)
-q=A.a([new A.dj(new A.aQ(r,r,r,r),p,h),A.fn(j,m,m)],q)
-if(n)q.push(new A.dj(new A.aQ(r,r,r,r),k,h))
-return A.fn(new A.xj(B.ck,B.pO,B.be,B.kd,h,B.j9,h,q,h),g,h)},
+$2(a,b){var s,r,q,p,o,n,m,l,k,j,i=null,h=b.d,g=b.b
+A.oA().$1("Screen size ["+A.h(g)+", "+A.h(h)+"]")
+s=this.b.a=g<1200
+r=h*(s?0.8:0.9)
+q=(h-r)*0.8
+if(s)q/=2
+p=this.a
+o=new A.BL(new A.ab(q,q),new A.S4(p),new A.S5(p),i)
+n=q*0.2/2
+m=t.E
+l=A.a([],m)
+if(!s)B.b.F(l,A.a([o,B.E5],m))
+k=new A.C(new Float64Array(2))
+k.d3(q)
+j=p.a.gU6()
+l.push(new A.tD(j,k,20,7,i))
+l=A.BQ(l,B.pO,B.be)
+p=p.a
+k=new A.mu(p,i,t.tW)
+k.MZ(p)
+m=A.a([new A.dj(new A.aQ(n,n,n,n),l,i),A.fn(k,r,r)],m)
+if(s)m.push(new A.dj(new A.aQ(n,n,n,n),o,i))
+return A.fn(new A.xj(B.ck,B.pO,B.be,B.kd,i,B.j9,i,m,i),h,i)},
 $S:334}
 A.S5.prototype={
 $0(){return this.a.a.Et(0,!1)},
