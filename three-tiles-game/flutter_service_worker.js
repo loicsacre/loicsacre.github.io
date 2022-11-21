@@ -4,9 +4,9 @@ const TEMP = 'flutter-temp-cache';
 const CACHE_NAME = 'flutter-app-cache';
 const RESOURCES = {
   "version.json": "865ee0638eb4c9e1ba9dce604aa77b5b",
-"index.html": "1f676384a20cc2961e949b7d8996bbe1",
-"/": "1f676384a20cc2961e949b7d8996bbe1",
-"main.dart.js": "e2efa52b3c589f1066f17c34811dd8cf",
+"index.html": "d95531f6fb268ec8ef9cd1ea6fe4cb8a",
+"/": "d95531f6fb268ec8ef9cd1ea6fe4cb8a",
+"main.dart.js": "ca7e6cd029683be7594ac486e6c43624",
 "flutter.js": "f85e6fb278b0fd20c349186fb46ae36d",
 "favicon.png": "5dcef449791fa27946b3d35ad8803796",
 "icons/Icon-192.png": "ac9a721a12bbc803b44f645561ecb1e1",
@@ -30,10 +30,8 @@ const RESOURCES = {
 "assets/assets/images/tiles/blue_tile.png": "ae9e2f98794705e71c904344e0796028",
 "assets/assets/images/tiles/yellow_tile.png": "5b31546c58d193a2b13ee1620524fd76",
 "assets/assets/images/rotate-right.png": "9dcd2fb8685add6a07f10206372006bb",
-"assets/assets/boards/board-1.json": "9c13488856f243d4fffd9a4dd9bbc89c",
 "assets/assets/boards/1/board-1.json": "7de5d0a986bace7dd8005ce9a236d373",
 "assets/assets/boards/board-test.json": "9c13488856f243d4fffd9a4dd9bbc89c",
-"assets/assets/boards/board-2.json": "7de5d0a986bace7dd8005ce9a236d373",
 "assets/assets/boards/4/board-1.json": "33d196b7a93d99aa4544a272647e40e9",
 "assets/assets/boards/3/board-1.json": "bf7213d17d8efa09206c968a80b314c1",
 "assets/assets/boards/2/board-1.json": "113b83012bdddaaa1e0f3a45c60d27fb",
