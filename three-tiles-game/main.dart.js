@@ -79785,10 +79785,9 @@ h.aM(i,i)
 i=new A.U(new Float64Array(2))
 i.fV(j)
 j=l.cb
+j.c=!0
 s=$.ld()
-r=j.a
-j=j.c?"tiles/letters/"+r+"-letter.png":"tiles/"+r+"_tile.png"
-j=s.a.j(0,j).a
+j=s.a.j(0,"tiles/letters/"+j.a+"-letter.png").a
 j.toString
 s=new A.aeE(B.bs.cz(),j,B.q)
 r=j.gao(j)
