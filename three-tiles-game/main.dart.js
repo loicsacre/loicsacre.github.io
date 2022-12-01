@@ -79493,7 +79493,7 @@ s=this.c
 s===$&&A.b()
 return"GridConfig(isVerticalLayout "+r+", debug "+s+")"}}
 A.My.prototype={
-L(a){return new A.Ay(B.Dy,"Flutter Demo",A.aqc(B.k,null,"Poppins",B.hv,B.k,null),!1,null)}}
+L(a){return new A.Ay(B.Dy,"Three Tiles Game",A.aqc(B.k,null,"Poppins",B.hv,B.k,null),!1,null)}}
 A.a4F.prototype={
 gB(a){var s=this.x
 s===$&&A.b()
