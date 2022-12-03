@@ -80115,7 +80115,7 @@ afq(a,b){return A.apb(B.i,new A.V(b,b),B.DH,new A.a89(this,a),"Menu")}}
 A.a84.prototype={
 $2(a,b){var s,r,q,p,o,n,m,l,k=null,j=b.d,i=b.b,h=this.c,g=h.b=i<600,f=g?i:j*9/10
 A.rP().$1("Screen size ["+A.f(i)+", "+A.f(j)+"] (gameWidth "+A.f(f)+")")
-s=g?f/9:(j-f)*4/5*0.8
+s=g?f/7:(j-f)*4/5*0.8
 r=f/45
 q=this.a
 p=q.a.gafM()
