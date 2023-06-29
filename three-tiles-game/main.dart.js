@@ -28112,7 +28112,7 @@ o=p?c/9:0
 m.z=o
 n=s/3
 m.Q=n
-s=m.x=(b/c<1.8?1:3)*s+r+o+n
+s=m.x=(b/c<1.9?1:3)*s+r+o+n
 m.y=p?b-c-s:s
 return m},
 aaB:function aaB(a,b,c){var _=this
@@ -90321,8 +90321,8 @@ if(q.b){p=h.w
 o=p.x
 n=p.e
 m=p.a
-l=540<=m&&m<=570||p.b/m<1.8?B.aq:B.a6
-m=p.b/m<1.8?B.kN:B.B
+l=540<=m&&m<=570||p.b/m<1.9?B.aq:B.a6
+m=p.b/m<1.9?B.kN:B.B
 k=A.cN(g,p.z,g)
 p=p.d
 j=new A.S(new Float64Array(2))
@@ -90367,8 +90367,8 @@ s=m.d
 r=A.avi(s,o,n)
 m.w=r
 r=r.a<570
-o=r?o:844
-n=r?n:390
+o=r?o:771
+n=r?n:412.2
 r=A.avi(s,o,n)
 m.w=r
 A.tF(r)
