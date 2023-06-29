@@ -28112,7 +28112,7 @@ o=p?c/9:0
 m.z=o
 n=s/3
 m.Q=n
-s=m.x=(b/c<1.9?1:3)*s+r+o+n
+s=m.x=(b/c<1.9?1:2.5)*s+r+o+n
 m.y=p?b-c-s:s
 return m},
 aaB:function aaB(a,b,c){var _=this
@@ -90368,7 +90368,7 @@ r=A.avi(s,o,n)
 m.w=r
 r=r.a<570
 o=r?o:771
-n=r?n:412.2
+n=r?n:412
 r=A.avi(s,o,n)
 m.w=r
 A.tF(r)
