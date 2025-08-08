@@ -1,11 +1,11 @@
 {
-  "name": "mobile",
-  "short_name": "mobile",
+  "name": "La Fête à Tilff",
+  "short_name": "La Fête à Tilff",
   "start_url": ".",
   "display": "standalone",
   "background_color": "#0175C2",
   "theme_color": "#0175C2",
-  "description": "L'application web MyMedjob",
+  "description": "Le tirage au sort de la Fête à Tilff",
   "orientation": "portrait-primary",
   "prefer_related_applications": false,
   "icons": [
