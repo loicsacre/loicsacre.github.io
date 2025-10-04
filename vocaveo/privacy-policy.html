@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Politique de confidentialité – Vocaveo</title>
+    <style>
+      :root {
+        --primary: #246db5;
+        --primary-light: #f0f6fe;
+        --primary-dark: #012d50;
+        --black: #000000;
+      }
+
+      body {
+        font-family: "Segoe UI", Roboto, Arial, sans-serif;
+        background-color: var(--primary-light);
+        color: var(--black);
+        margin: 0;
+        padding: 0;
+        line-height: 1.6;
+      }
+
+      header {
+        background-color: var(--primary);
+        color: white;
+        padding: 1.5rem;
+        text-align: center;
+      }
+
+      main {
+        max-width: 800px;
+        margin: 2rem auto;
+        background: white;
+        padding: 2rem;
+        border-radius: 12px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      h1,
+      h2 {
+        color: var(--primary-dark);
+      }
+
+      a {
+        color: var(--primary);
+        text-decoration: none;
+        font-weight: 500;
+      }
+
+      a:hover {
+        text-decoration: underline;
+      }
+
+      footer {
+        text-align: center;
+        margin-top: 3rem;
+        font-size: 0.9rem;
+        color: #555;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Politique de confidentialité</h1>
+    </header>
+
+    <main>
+      <p><strong>Dernière mise à jour :</strong> octobre 2025</p>
+
+      <h2>1. Introduction</h2>
+      <p>
+        L’application <strong>Vocaveo</strong> respecte votre vie privée et ne
+        collecte <strong>aucune donnée personnelle</strong>. Aucune information
+        n’est partagée, stockée ou transmise à des services tiers.
+      </p>
+
+      <h2>2. Utilisation de l’application</h2>
+      <p>
+        Vocaveo est une application permettant d’apprendre et de mémoriser du
+        vocabulaire facilement et hors ligne. Vous pouvez créer des listes de
+        vocabulaire, enregistrer vos mots et les étudier à votre rythme.
+      </p>
+
+      <h2>3. Traduction et définitions en ligne</h2>
+      <p>
+        Certaines fonctionnalités (comme la <strong>traduction</strong> ou la
+        <strong>définition</strong> de mots) peuvent nécessiter une connexion
+        Internet pour fonctionner. Ces requêtes sont envoyées uniquement au
+        moment de l’utilisation de la fonction concernée et ne servent
+        <strong>qu’à obtenir la traduction ou la définition demandée</strong>.
+        Aucune donnée n’est enregistrée ni utilisée à d’autres fins.
+      </p>
+
+      <h2>4. Contact</h2>
+      <p>
+        Pour toute question concernant cette politique de confidentialité ou
+        l’application, vous pouvez contacter le développeur à cette adresse :
+        <a id="contact-link" href="#">Contacter le support</a>
+      </p>
+
+      <footer>&copy; 2025 Vocaveo. Tous droits réservés.</footer>
+    </main>
+
+    <script>
+      // Protection contre les bots : l’adresse email est construite dynamiquement
+      const user = "loicsacre03+vocaveo";
+      const domain = "gmail.com";
+      const link = document.getElementById("contact-link");
+      link.href = `mailto:${user}@${domain}`;
+    </script>
+  </body>
+</html>
