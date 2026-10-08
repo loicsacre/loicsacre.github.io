@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DeviceHarbor – files and logs of your phone, on your Mac</title>
+    <meta
+      name="description"
+      content="Plug in an Android phone or an iPhone: copy files both ways, install APKs and read each app's logs. Free for macOS."
+    />
+    <link rel="icon" type="image/png" href="images/favicon.png" />
+    <meta property="og:title" content="DeviceHarbor" />
+    <meta property="og:description" content="Files and logs of your phone, on your Mac." />
+    <meta property="og:image" content="https://loicsacre.github.io/deviceharbor/images/files.webp" />
+    <style>
+      :root {
+        --bg: #0b1120;
+        --panel: #111827;
+        --surface: #1b2336;
+        --border: #263042;
+        --text: #e2e8f0;
+        --muted: #94a3b8;
+        --subtle: #64748b;
+        --accent: #60a5fa;
+        --live: #22c55e;
+        --warning: #facc15;
+        --error: #f87171;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--text);
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+        line-height: 1.6;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      a {
+        color: var(--accent);
+      }
+
+      code {
+        font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+        font-size: 0.9em;
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: 6px;
+        padding: 0.1em 0.4em;
+        word-break: break-word;
+      }
+
+      .wrap {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 0 16px;
+      }
+
+      nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 0;
+      }
+
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-weight: 700;
+        color: var(--text);
+        text-decoration: none;
+      }
+
+      .brand img {
+        width: 32px;
+        height: 32px;
+      }
+
+      .lang {
+        display: flex;
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        overflow: hidden;
+      }
+
+      .lang button {
+        background: none;
+        border: 0;
+        color: var(--muted);
+        padding: 6px 12px;
+        font: inherit;
+        font-size: 14px;
+        cursor: pointer;
+      }
+
+      .lang button[aria-pressed="true"] {
+        background: var(--surface);
+        color: var(--text);
+      }
+
+      .lang button:focus-visible,
+      .download:focus-visible {
+        outline: 2px solid var(--accent);
+        outline-offset: 2px;
+      }
+
+      header.hero {
+        text-align: center;
+        padding: 48px 0 32px;
+      }
+
+      .hero img.icon {
+        width: 112px;
+        height: 112px;
+      }
+
+      h1 {
+        font-size: clamp(2rem, 5vw, 3.2rem);
+        line-height: 1.15;
+        margin: 16px 0 12px;
+        letter-spacing: -0.02em;
+      }
+
+      .tagline {
+        font-size: 1.2rem;
+        color: var(--muted);
+        max-width: 640px;
+        margin: 0 auto 28px;
+      }
+
+      .download {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        background: var(--accent);
+        color: var(--bg);
+        font-weight: 700;
+        font-size: 1.05rem;
+        padding: 14px 26px;
+        border-radius: 12px;
+        text-decoration: none;
+        transition: transform 0.15s ease, box-shadow 0.15s ease;
+      }
+
+      .download:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 8px 24px rgba(96, 165, 250, 0.3);
+      }
+
+      .meta {
+        color: var(--subtle);
+        font-size: 0.9rem;
+        margin-top: 12px;
+      }
+
+      .shot {
+        display: block;
+        width: 100%;
+        height: auto;
+        border-radius: 12px;
+        border: 1px solid var(--border);
+        box-shadow: 0 24px 64px rgba(0, 0, 0, 0.55);
+      }
+
+      section {
+        padding: 56px 0;
+      }
+
+      h2 {
+        font-size: clamp(1.5rem, 3vw, 2rem);
+        margin: 0 0 8px;
+        letter-spacing: -0.01em;
+      }
+
+      .lead {
+        color: var(--muted);
+        margin: 0 0 28px;
+        max-width: 720px;
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: 16px;
+      }
+
+      .card {
+        background: var(--panel);
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        padding: 20px;
+      }
+
+      .card svg {
+        width: 24px;
+        height: 24px;
+        color: var(--accent);
+      }
+
+      .card h3 {
+        font-size: 1.05rem;
+        margin: 10px 0 6px;
+      }
+
+      .card p {
+        margin: 0;
+        color: var(--muted);
+        font-size: 0.95rem;
+      }
+
+      .split {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 32px;
+        align-items: center;
+      }
+
+      ol.steps {
+        padding-left: 1.2em;
+        margin: 0;
+      }
+
+      ol.steps li {
+        margin-bottom: 10px;
+        color: var(--muted);
+      }
+
+      ol.steps strong {
+        color: var(--text);
+      }
+
+      .note {
+        border-left: 3px solid var(--warning);
+        background: var(--panel);
+        padding: 14px 18px;
+        border-radius: 0 8px 8px 0;
+        color: var(--muted);
+        margin-top: 20px;
+      }
+
+      footer {
+        border-top: 1px solid var(--border);
+        padding: 28px 0 40px;
+        color: var(--subtle);
+        font-size: 0.9rem;
+        text-align: center;
+      }
+
+      [data-lang] {
+        display: none;
+      }
+
+      html[lang="en"] [data-lang="en"],
+      html[lang="fr"] [data-lang="fr"] {
+        display: revert;
+      }
+
+      @media (max-width: 760px) {
+        .split {
+          grid-template-columns: 1fr;
+        }
+        section {
+          padding: 40px 0;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .download {
+          transition: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <nav>
+        <a class="brand" href="./"><img src="images/icon.png" alt="" />DeviceHarbor</a>
+        <div class="lang" role="group" aria-label="Language">
+          <button type="button" data-set-lang="fr" aria-pressed="false">FR</button>
+          <button type="button" data-set-lang="en" aria-pressed="true">EN</button>
+        </div>
+      </nav>
+
+      <header class="hero">
+        <img class="icon" src="images/icon.png" alt="DeviceHarbor icon" />
+        <h1>
+          <span data-lang="en">Your phone's files and logs,<br />right on your Mac</span>
+          <span data-lang="fr">Les fichiers et les logs de votre téléphone,<br />directement sur votre Mac</span>
+        </h1>
+        <p class="tagline">
+          <span data-lang="en">Plug in an Android phone or an iPhone. Copy files both ways, install APKs, and read each app's logs live — no terminal, no Android File Transfer.</span>
+          <span data-lang="fr">Branchez un téléphone Android ou un iPhone. Copiez des fichiers dans les deux sens, installez des APK et lisez les logs de chaque app en direct — sans terminal, sans Android File Transfer.</span>
+        </p>
+        <a class="download" href="https://github.com/loicsacre/deviceharbor/releases/latest/download/DeviceHarbor.dmg">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12M7 10l5 5 5-5M5 21h14" /></svg>
+          <span data-lang="en">Download for Mac</span>
+          <span data-lang="fr">Télécharger pour Mac</span>
+        </a>
+        <p class="meta">
+          <span data-lang="en">Free · macOS 12 or later · Apple Silicon and Intel · English and French</span>
+          <span data-lang="fr">Gratuit · macOS 12 ou plus récent · Apple Silicon et Intel · français et anglais</span>
+        </p>
+      </header>
+
+      <img class="shot" src="images/files.webp" width="2880" height="1800" alt="DeviceHarbor Files view: the Mac on the left, the phone on the right, an APK just copied and ready to install" />
+
+      <section>
+        <h2>
+          <span data-lang="en">Everything you used to do in the terminal</span>
+          <span data-lang="fr">Tout ce que vous faisiez au terminal</span>
+        </h2>
+        <p class="lead">
+          <span data-lang="en">One window, the phone is detected as soon as it is plugged in.</span>
+          <span data-lang="fr">Une seule fenêtre, le téléphone est détecté dès qu'il est branché.</span>
+        </p>
+        <div class="grid">
+          <div class="card">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7h6l2 2h10v10H3z" /></svg>
+            <h3><span data-lang="en">Files, side by side</span><span data-lang="fr">Les fichiers, côte à côte</span></h3>
+            <p>
+              <span data-lang="en">The Mac on the left, the phone on the right. Drag files and folders either way, rename, create folders, delete.</span>
+              <span data-lang="fr">Le Mac à gauche, le téléphone à droite. Glissez fichiers et dossiers dans les deux sens, renommez, créez des dossiers, supprimez.</span>
+            </p>
+          </div>
+          <div class="card">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12M7 10l5 5 5-5M5 21h14" /></svg>
+            <h3><span data-lang="en">Drop an APK, install it</span><span data-lang="fr">Déposez un APK, installez-le</span></h3>
+            <p>
+              <span data-lang="en">Drop files anywhere on the window to send them to Download; an APK installs in one click, with Android's real error if it fails.</span>
+              <span data-lang="fr">Déposez des fichiers n'importe où sur la fenêtre pour les envoyer dans Download ; un APK s'installe en un clic, avec la vraie erreur d'Android en cas d'échec.</span>
+            </p>
+          </div>
+          <div class="card">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6h16M4 12h10M4 18h13" /></svg>
+            <h3><span data-lang="en">Logs per app</span><span data-lang="fr">Les logs par app</span></h3>
+            <p>
+              <span data-lang="en">Pick an app and read its logs live, even across restarts. Filter by level or text, see errors at a glance, copy or save.</span>
+              <span data-lang="fr">Choisissez une app et lisez ses logs en direct, même après un redémarrage. Filtrez par niveau ou par texte, repérez les erreurs d'un coup d'œil, copiez ou enregistrez.</span>
+            </p>
+          </div>
+          <div class="card">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="2" width="12" height="20" rx="2" /><path d="M11 18h2" /></svg>
+            <h3><span data-lang="en">Android and iPhone</span><span data-lang="fr">Android et iPhone</span></h3>
+            <p>
+              <span data-lang="en">Logs, launch and stop on both. Files and APKs on Android, where Android File Transfer keeps failing.</span>
+              <span data-lang="fr">Logs, lancement et arrêt sur les deux. Fichiers et APK sur Android, là où Android File Transfer plante sans arrêt.</span>
+            </p>
+          </div>
+          <div class="card">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="10" width="16" height="11" rx="2" /><path d="M8 10V7a4 4 0 0 1 8 0v3" /></svg>
+            <h3><span data-lang="en">Debug builds' private files</span><span data-lang="fr">Les fichiers privés des builds debug</span></h3>
+            <p>
+              <span data-lang="en">Open the private folder of your own debug apps: preferences, databases, cache.</span>
+              <span data-lang="fr">Ouvrez le dossier privé de vos apps en debug : préférences, bases de données, cache.</span>
+            </p>
+          </div>
+          <div class="card">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 7 9 18l-5-5" /></svg>
+            <h3><span data-lang="en">Nothing else to install</span><span data-lang="fr">Rien d'autre à installer</span></h3>
+            <p>
+              <span data-lang="en">The Android tools come inside the app. No SDK, no Homebrew, no command line.</span>
+              <span data-lang="fr">Les outils Android sont inclus dans l'app. Pas de SDK, pas de Homebrew, pas de ligne de commande.</span>
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <img class="shot" src="images/logs.webp" width="2880" height="1800" loading="lazy" alt="DeviceHarbor Logs view: an app's live logs with warnings in yellow and an exception in red" />
+
+      <section>
+        <div class="split">
+          <div>
+            <h2>
+              <span data-lang="en">Get started</span>
+              <span data-lang="fr">Pour commencer</span>
+            </h2>
+            <ol class="steps">
+              <li data-lang="en"><strong>Open the DMG</strong> and drag DeviceHarbor into Applications.</li>
+              <li data-lang="fr"><strong>Ouvrez le DMG</strong> et glissez DeviceHarbor dans Applications.</li>
+              <li data-lang="en"><strong>First launch:</strong> right-click the app › Open › Open. Or System Settings › Privacy &amp; Security › Open Anyway. Only once.</li>
+              <li data-lang="fr"><strong>Premier lancement :</strong> clic droit sur l'app › Ouvrir › Ouvrir. Ou Réglages Système › Confidentialité et sécurité › Ouvrir quand même. Une seule fois.</li>
+              <li data-lang="en"><strong>On the Android phone (once):</strong> Settings › About phone › Software information › tap “Build number” 7 times, then Settings › Developer options › turn on “USB debugging”.</li>
+              <li data-lang="fr"><strong>Sur le téléphone Android (une fois) :</strong> Paramètres › À propos du téléphone › Informations sur le logiciel › touchez 7 fois « Numéro de version », puis Paramètres › Options de développement › activez « Débogage USB ».</li>
+              <li data-lang="en"><strong>Plug it in</strong> and tap “Allow” on the phone. Tick “Always allow from this computer”.</li>
+              <li data-lang="fr"><strong>Branchez-le</strong> et touchez « Autoriser » sur le téléphone. Cochez « Toujours autoriser sur cet ordinateur ».</li>
+            </ol>
+            <p class="note">
+              <span data-lang="en">The app is free and not notarized by Apple, which is why macOS asks for confirmation the first time.</span>
+              <span data-lang="fr">L'app est gratuite et n'est pas validée par Apple, d'où la confirmation demandée par macOS la première fois.</span>
+            </p>
+            <p class="note">
+              <span data-lang="en">iPhone: install the free libimobiledevice tools once with <code>brew install libimobiledevice ideviceinstaller</code>, then plug in, unlock and tap “Trust”.</span>
+              <span data-lang="fr">iPhone : installez une fois les outils gratuits libimobiledevice avec <code>brew install libimobiledevice ideviceinstaller</code>, puis branchez, déverrouillez et touchez « Se fier ».</span>
+            </p>
+          </div>
+          <img class="shot" src="images/setup-fr.webp" width="2880" height="1800" loading="lazy" alt="DeviceHarbor explains how to allow USB debugging on the phone" />
+        </div>
+      </section>
+    </div>
+
+    <footer>
+      <div class="wrap">
+        <span data-lang="en">DeviceHarbor · made by Loïc Sacré · includes adb from the Android SDK Platform-Tools</span>
+        <span data-lang="fr">DeviceHarbor · fait par Loïc Sacré · inclut adb des Android SDK Platform-Tools</span>
+      </div>
+    </footer>
+
+    <script>
+      (function () {
+        var saved;
+        try {
+          saved = localStorage.getItem("deviceharbor.lang");
+        } catch (e) {}
+        var lang = saved || ((navigator.language || "en").toLowerCase().indexOf("fr") === 0 ? "fr" : "en");
+        function apply(l) {
+          document.documentElement.lang = l;
+          document.querySelectorAll("[data-set-lang]").forEach(function (b) {
+            b.setAttribute("aria-pressed", String(b.getAttribute("data-set-lang") === l));
+          });
+          try {
+            localStorage.setItem("deviceharbor.lang", l);
+          } catch (e) {}
+        }
+        document.querySelectorAll("[data-set-lang]").forEach(function (b) {
+          b.addEventListener("click", function () {
+            apply(b.getAttribute("data-set-lang"));
+          });
+        });
+        apply(lang);
+      })();
+    </script>
+  </body>
+</html>
